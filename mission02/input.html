@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+</head>
+
+<body>
+    <h1>1부터 100 범위 안의 숫자를 입력하세요:</h1>
+    <input type="text" id="comIn" value="" />
+    <button onclick="fnMeasure()">확인</button>
+    <p>입력결과:</p>
+    <textarea id="comOutput"></textarea>
+    <script>
+        function fnMeasure() {
+            let iNumber, strResult;
+
+            // 입력한 숫자를 가져옴
+            iNumber = document.querySelector("#comIn").value;
+            // 1부터 100까지 범위인지 확인
+            if (iNumber < 1 || iNumber > 100) strResult = "입력 범위가 맞지 않습니다!";
+            else strResult = "성공적으로 입력하셨습니다!";
+
+            document.querySelector("#comOutput").innerHTML = strResult;
+        }
+    </script>
+</body>
+
+</html>

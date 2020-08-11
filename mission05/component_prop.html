@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 초기값(각각 1,10,100) 이 다른 세개의 심플 카운터 표시 -->
+    <simple-counter startnumber="1"></simple-counter>
+    <simple-counter startnumber="10"></simple-counter>
+    <simple-counter startnumber="100"></simple-counter>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script>
+    // 심플 카운터 컴포넌트 디자인 및 등록
+    Vue.component('simple-counter', {
+      // 1. 엘리먼트 속성값으로 받을 startnumber 선언
+      props: ['startnumber'],
+      // 2. 화면에 표시할 템플릿 정의
+      template: `
+        <button v-on:click="fnIncCounter">
+          카운터 : {{ fnGetCounter }}
+        </button>`,
+      // 3. 데이터 속성은 함수로 선언하여 속성값으로 받은 startnumber를 nCounter에 저장
+      data: function () {
+        return {
+          nCounter: parseInt(this.startnumber)
+        }
+      },
+      // 4. 데이터 값을 읽어다가 mustache에 바인딩하는 콤퓨티드 속성 정의
+      computed: {
+        fnGetCounter: function () {
+          return this.nCounter
+        }
+      },
+      // 5. 버튼이 눌리면 이벤트 핸들러로 카운터 값 +1 증가하는 메서드 속성 정의
+      methods: {
+        fnIncCounter: function () {
+          this.nCounter += 1
+        }
+      }
+    })
+
+    var gApp = new Vue({
+      el: '#app',
+    })
+  </script>
+</body>
+
+</html>

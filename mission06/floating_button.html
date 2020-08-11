@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <!-- vuetify.js에 필요한 스타일 파일 링크 연결 -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.2.x/dist/vuetify.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+            <!-- 상단에 툴바 배치하고 좌측에 메뉴 아이콘 넣음 -->
+            <v-app-bar app color="blue" dark>
+                <v-app-bar-nav-icon></v-app-bar-nav-icon>
+                <v-toolbar-title>Virtual University</v-toolbar-title>
+            </v-app-bar>
+            <v-content>
+                <v-container>
+                    <v-row>
+                        <v-col xs="12">
+                            <v-card>
+                                <!-- 내용 영역에 높이 300px 카드 스타일 넣음 -->
+                                <v-card-text style="height: 300px;" class="grey lighten-4"></v-card-text>
+                                <!-- 하단 기준으로 50px 높이에 [추가] 플로팅 단추 넣음 -->
+                                <v-card-text style="height: 50px; position:relative">
+                                    <v-btn absolute dark fab top right color="pink">
+                                        <v-icon>add</v-icon>
+                                    </v-btn>
+                                </v-card-text>
+                            </v-card>
+                        </v-col>
+                    </v-row>
+                </v-container>
+            </v-content>
+        </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.x/dist/vuetify.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify()
+        })
+    </script>
+</body>
+
+</html>

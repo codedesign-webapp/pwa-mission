@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- JSON 데이터를 읽어서 항목의 번호와 이름, 나이를 하나씩 표시함 -->
+        <ul v-for="(item, index) in aPersons">
+            <li>
+                <!-- index는 항목의 순서를 숫자로 표시 -->
+                <p>번호: {{ index }} </p>
+                <p>이름: {{ item.name }} </p>
+                <p>나이: {{ item.age }} </p>
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            // 고객의 이름, 나이를 값으로 하는 JSON 데이터 정의
+            data: {
+                aPersons: [{
+                        name: '홍길동',
+                        age: 27
+                    },
+                    {
+                        name: '이순신',
+                        age: 30
+                    },
+                    {
+                        name: '김유신',
+                        age: 40
+                    }
+                ]
+            }
+        });
+    </script>
+</body>
+
+</html>

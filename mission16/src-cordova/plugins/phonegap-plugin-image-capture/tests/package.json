@@ -1,0 +1,14 @@
+{
+  "name": "phonegap-plugin-image-capture-tests",
+  "version": "0.0.1",
+  "description": "",
+  "cordova": {
+    "id": "phonegap-plugin-image-capture-tests",
+    "platforms": []
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "",
+  "license": "Apache 2.0"
+}

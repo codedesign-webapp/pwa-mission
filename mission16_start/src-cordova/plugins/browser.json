@@ -1,0 +1,28 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.vue.example.app"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.vue.example.app"
+    },
+    "phonegap-plugin-media-stream": {
+      "PACKAGE_NAME": "com.vue.example.app"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "com.vue.example.app"
+    },
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "com.vue.example.app"
+    }
+  }
+}

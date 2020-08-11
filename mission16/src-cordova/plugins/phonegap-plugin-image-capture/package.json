@@ -1,0 +1,87 @@
+{
+  "_from": "phonegap-plugin-image-capture",
+  "_id": "phonegap-plugin-image-capture@1.1.2",
+  "_inBundle": false,
+  "_integrity": "sha1-pFjB/kiUuUAIsn0GZFfcoBarn/U=",
+  "_location": "/phonegap-plugin-image-capture",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "phonegap-plugin-image-capture",
+    "name": "phonegap-plugin-image-capture",
+    "escapedName": "phonegap-plugin-image-capture",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/phonegap-plugin-image-capture/-/phonegap-plugin-image-capture-1.1.2.tgz",
+  "_shasum": "a458c1fe4894b94008b27d066457dca016ab9ff5",
+  "_spec": "phonegap-plugin-image-capture",
+  "_where": "C:\\PWA-mission-new\\mission16\\src-cordova",
+  "author": {
+    "name": "Apache Software Foundation"
+  },
+  "bugs": {
+    "url": "https://github.com/phonegap/phonegap-plugin-image-capture/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "phonegap-plugin-image-capture",
+    "platforms": [
+      "android",
+      "ios",
+      "browser"
+    ]
+  },
+  "dependencies": {
+    "eslint": "^4.4.1"
+  },
+  "deprecated": false,
+  "description": "Phonegap Image Capture Plugin",
+  "devDependencies": {
+    "eslint": "^4.0.0",
+    "eslint-config-semistandard": "^11.0.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "husky": "^0.10.1",
+    "jasmine-node": "^1.14.5",
+    "pluginpub": "^0.0.9"
+  },
+  "engines": {
+    "cordovaDependencies": {
+      "3.0.0": {
+        "cordova": ">100"
+      }
+    }
+  },
+  "homepage": "https://github.com/phonegap/phonegap-plugin-image-capture#readme",
+  "keywords": [
+    "cordova",
+    "phonegap",
+    "camera",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-browser"
+  ],
+  "license": "Apache-2.0",
+  "name": "phonegap-plugin-image-capture",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phonegap/phonegap-plugin-image-capture.git"
+  },
+  "scripts": {
+    "eslint": "node node_modules/eslint/bin/eslint www && node node_modules/eslint/bin/eslint src && node node_modules/eslint/bin/eslint tests",
+    "test": "npm run eslint && jasmine-node --color spec"
+  },
+  "types": "./types/index.d.ts",
+  "version": "1.1.2"
+}

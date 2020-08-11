@@ -1,0 +1,50 @@
+{
+  "es6-promise-plugin": {
+    "source": {
+      "type": "registry",
+      "id": "es6-promise-plugin"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-compat": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-compat@^1.1.0"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-whitelist": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-whitelist@1.3.4"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-splashscreen": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-splashscreen@5.0.4"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "phonegap-plugin-image-capture": {
+    "source": {
+      "type": "registry",
+      "id": "phonegap-plugin-image-capture"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "phonegap-plugin-media-stream": {
+    "source": {
+      "type": "registry",
+      "id": "phonegap-plugin-media-stream@^1.2.0"
+    },
+    "is_top_level": false,
+    "variables": {}
+  }
+}

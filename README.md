@@ -12,7 +12,7 @@
 
 <br>
 
-## 1. 예제 파일 소개
+## 1. 미션 예제 파일 소개
 
 이 곳은 **'Do it! 프로그레시브 웹앱 만들기'** (이지스퍼블리싱, 김응석 저) 책 **미션예제 완성 소스코드 원격저장소(Repository)** 입니다.
 
@@ -97,7 +97,7 @@
 
 <br>
 
-## 1. Introduction to sample files
+## 1. Introduction to Mission sample files
 
 This is a **source code repository** for mission examples of the book which is **'Do it! Making Progressive Web Apps'** (Easys Publishing, Eungsuck Kim).
 

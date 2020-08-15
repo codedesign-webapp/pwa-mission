@@ -1,3 +1,4 @@
+[![HitCount](http://hits.dwyl.com/codedesign-webapp/pwa-mission.svg)](http://hits.dwyl.com/codedesign-webapp/pwa-mission)
 <br><br>
 <p align="center"><img src="https://github.com/codedesign-webapp/pwa-about/blob/master/images/pwa-logo.png"></p>
 <br><br>

@@ -11,7 +11,7 @@
           <v-icon>mdi-dots-vertical</v-icon>
         </v-btn>
       </v-app-bar>
-      <v-content>
+      <v-main>
         <v-container>
           <!-- display-1/3, body-1/2 타이포그래피 서체 종류와 크기로 설정 -->
           <h1 class="display-1 my-5">안녕하세요</h1>
@@ -21,7 +21,7 @@
           <h1 class="display-3 my-4">안녕하세요</h1>
           <p class="body-1 my-4">마스터페이지입니다.</p>
         </v-container>
-      </v-content>
+      </v-main>
       <!-- footer 색상을 secondary로 설정하고 fixed로 위치를 고정시킴 -->
       <v-footer color="secondary" dark fixed>
         <!-- mx-auto는 블럭레벨 엘리먼트의 내용을 가운데 정렬시킴 -->

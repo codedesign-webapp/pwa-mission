@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-content>
+    <v-main>
       <div class="text-center display-3 my-4">메인 페이지입니다.</div>
       <v-row>
         <v-col sm="10" offset-sm="1">
@@ -17,7 +17,7 @@
           확 인
         </v-btn>
       </div>
-    </v-content>
+    </v-main>
   </v-container>
 </template>
 

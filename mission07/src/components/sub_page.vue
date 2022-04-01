@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-content>
+    <v-main>
         <div class="text-center display-1 my-4">서브 페이지입니다.</div>
         <v-divider></v-divider>
         <!-- 라우터로 전달받은 두개의 매개변수 값을 데이터 속성에 저장한 뒤에 가져와서 표시함 -->
@@ -11,7 +11,7 @@
             <v-icon>mdi-replay</v-icon>
           </v-btn>
         </div>
-    </v-content>
+    </v-main>
   </v-container>
 </template>
 

@@ -10,10 +10,10 @@
     "cordova-plugin-splashscreen": {
       "PACKAGE_NAME": "com.vue.example.app"
     },
-    "cordova-plugin-whitelist": {
+    "phonegap-plugin-media-stream": {
       "PACKAGE_NAME": "com.vue.example.app"
     },
-    "phonegap-plugin-media-stream": {
+    "phonegap-plugin-image-capture": {
       "PACKAGE_NAME": "com.vue.example.app"
     }
   },

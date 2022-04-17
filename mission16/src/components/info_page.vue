@@ -48,13 +48,13 @@
       this.itemPic = this.oPictures.find(item => item['.key'] === itemID)
     },
     methods: {
-      fnDeleteItem() {
+      fnDeleteItem() {        
         // 파이어베이스 DB의 사진 항목 삭제
         oPicturesinDB.child(this.itemPic['.key']).remove()
         // 스토리지에 이미지가 존재할 경우(카메라 사용)만 삭제
         if (this.itemPic['filename']) oStorage.ref('images').child(this.itemPic['filename']).delete()
         // 홈화면으로 이동
-        this.$router.push('/');
+        this.$router.push('/');        
       }
     }
   }

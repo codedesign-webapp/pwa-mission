@@ -1,16 +1,8 @@
 {
-  "cordova-plugin-whitelist": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-whitelist@1"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-splashscreen": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-splashscreen@6.0.0"
+      "id": "cordova-plugin-splashscreen@6.0.1"
     },
     "is_top_level": true,
     "variables": {}
@@ -18,7 +10,7 @@
   "phonegap-plugin-media-stream": {
     "source": {
       "type": "registry",
-      "id": "phonegap-plugin-media-stream"
+      "id": "https://github.com/phonegap/phonegap-plugin-media-stream.git"
     },
     "is_top_level": true,
     "variables": {}
@@ -31,12 +23,12 @@
     "is_top_level": false,
     "variables": {}
   },
-  "cordova-plugin-compat": {
+  "phonegap-plugin-image-capture": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-compat@^1.1.0"
+      "id": "https://github.com/phonegap/phonegap-plugin-image-capture.git"
     },
-    "is_top_level": false,
+    "is_top_level": true,
     "variables": {}
   }
 }

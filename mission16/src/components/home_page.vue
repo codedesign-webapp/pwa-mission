@@ -34,8 +34,8 @@
     name: 'App',
     data() {
       return {
-        oPictures: [], // 사진 데이터 저장 변수
-      }
+        oPictures: []
+      } // 사진 데이터 저장 변수
     },
     // 파이어베이스와 연결된 뷰파이어 oPictures 객체 준비
     firebase: {

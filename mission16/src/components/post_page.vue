@@ -12,7 +12,7 @@
     <!-- 두 번째 행에는 기본 제목을 표시하고 수정할 수 있도록 함 -->
     <v-row mt-5>
       <v-col offset="2" cols="8">
-        <!-- autofocus 속성을 사용해서 기본 포커스 지정 -->
+        <!-- autofocus 어트리뷰트를 사용해서 기본 포커스 지정 -->
         <v-text-field name="title" label="사진 제목" v-model="sTitle" autofocus></v-text-field>
       </v-col>
     </v-row>

@@ -8,21 +8,18 @@
   },
   "installed_plugins": {
     "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "com.vue.cameragallery.app"
-    },
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.vue.cameragallery.app"
+      "PACKAGE_NAME": "com.cordova.cameragallery.app"
     },
     "phonegap-plugin-image-capture": {
-      "PACKAGE_NAME": "com.vue.cameragallery.app"
+      "PACKAGE_NAME": "com.cordova.cameragallery.app"
+    },
+    "phonegap-plugin-media-stream": {
+      "PACKAGE_NAME": "com.cordova.cameragallery.app"
     }
   },
   "dependent_plugins": {
     "es6-promise-plugin": {
-      "PACKAGE_NAME": "com.vue.cameragallery.app"
-    },
-    "phonegap-plugin-media-stream": {
-      "PACKAGE_NAME": "com.vue.cameragallery.app"
+      "PACKAGE_NAME": "com.cordova.cameragallery.app"
     }
   }
 }

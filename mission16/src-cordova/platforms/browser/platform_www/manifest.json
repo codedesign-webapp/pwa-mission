@@ -1,6 +1,6 @@
 {
-  "name": "VueExampleAppName",
-  "short_name": "VueExampleAppName",
+  "name": "카메라 갤러리",
+  "short_name": "카메라 갤러리",
   "description": "Description of your app from template",
   "start_url": "index.html",
   "scope": "index.html",

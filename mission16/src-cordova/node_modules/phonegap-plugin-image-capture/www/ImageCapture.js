@@ -34,7 +34,7 @@ var ImageCapture = function (mediaStreamTrack) {
 
 ImageCapture.prototype.takePhoto = function (photoSettings) {
     var getValue = argscheck.getValue;
-    var trackDesc = this.track.description;
+    var trackLabel = this.track.label;
     return new Promise(function (resolve, reject) {
         var success = function (info) {
             // if fetch exists & it is a native implementation
@@ -50,13 +50,21 @@ ImageCapture.prototype.takePhoto = function (photoSettings) {
                     .catch(function () {
                     });
             } else {
-                var byteCharacters = atob(info); // eslint-disable-line no-undef
-                var byteNumbers = new Array(byteCharacters.length);
-                for (var i = 0; i < byteCharacters.length; i++) {
-                    byteNumbers[i] = byteCharacters.charCodeAt(i);
+                var sliceSize = 1024;
+                var byteCharacters = atob(info.replace(/\s/g, '')); // eslint-disable-line no-undef
+                var bytesLength = byteCharacters.length;
+                var slicesCount = Math.ceil(bytesLength / sliceSize);
+                var byteArrays = new Array(slicesCount);
+                for (var sliceIndex = 0; sliceIndex < slicesCount; ++sliceIndex) {
+                    var begin = sliceIndex * sliceSize;
+                    var end = Math.min(begin + sliceSize, bytesLength);
+                    var bytes = new Array(end - begin);
+                    for (var offset = begin, i = 0; offset < end; ++i, ++offset) {
+                        bytes[i] = byteCharacters[offset].charCodeAt(0);
+                    }
+                    byteArrays[sliceIndex] = new Uint8Array(bytes);
                 }
-                var byteArray = new Uint8Array(byteNumbers);
-                var blob = new Blob([byteArray], { // eslint-disable-line no-undef
+                var blob = new Blob(byteArrays, { // eslint-disable-line no-undef
                     type: 'image/png'
                 });
                 resolve(blob);
@@ -77,7 +85,7 @@ ImageCapture.prototype.takePhoto = function (photoSettings) {
         var fillLightMode = getValue(photoSettings.fillLightMode, 'off');
 
         var args = [redEyeReduction, imageHeight, imageWidth, fillLightMode,
-            trackDesc
+            trackLabel
         ];
 
         exec(success, fail, 'ImageCapture', 'takePicture', args);
@@ -85,7 +93,7 @@ ImageCapture.prototype.takePhoto = function (photoSettings) {
 };
 
 ImageCapture.prototype.getPhotoCapabilities = function () {
-    var trackDesc = this.track.description;
+    var trackLabel = this.track.label;
     return new Promise(function (resolve, reject) {
         var success = function (info) {
             console.log('success' + JSON.stringify(info));
@@ -94,12 +102,12 @@ ImageCapture.prototype.getPhotoCapabilities = function () {
         var fail = function (error) {
             reject(error);
         };
-        exec(success, fail, 'ImageCapture', 'getPhotoCapabilities', [trackDesc]);
+        exec(success, fail, 'ImageCapture', 'getPhotoCapabilities', [trackLabel]);
     });
 };
 
 ImageCapture.prototype.getPhotoSettings = function () {
-    var trackDesc = this.track.description;
+    var trackLabel = this.track.label;
     return new Promise(function (resolve, reject) {
         var success = function (info) {
             console.log('success' + JSON.stringify(info));
@@ -108,7 +116,7 @@ ImageCapture.prototype.getPhotoSettings = function () {
         var fail = function (error) {
             reject(error);
         };
-        exec(success, fail, 'ImageCapture', 'getPhotoSettings', [trackDesc]);
+        exec(success, fail, 'ImageCapture', 'getPhotoSettings', [trackLabel]);
     });
 };
 

@@ -7,25 +7,19 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
     "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
+      "PACKAGE_NAME": "com.cordova.cameragallery.app"
     },
     "phonegap-plugin-image-capture": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
+      "PACKAGE_NAME": "com.cordova.cameragallery.app"
+    },
+    "phonegap-plugin-media-stream": {
+      "PACKAGE_NAME": "com.cordova.cameragallery.app"
     }
   },
   "dependent_plugins": {
     "es6-promise-plugin": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
-    "cordova-plugin-compat": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
-    "phonegap-plugin-media-stream": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
+      "PACKAGE_NAME": "com.cordova.cameragallery.app"
     }
   }
 }

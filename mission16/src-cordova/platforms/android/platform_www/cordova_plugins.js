@@ -24,8 +24,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     }
   ];
   module.exports.metadata = {
-    "cordova-plugin-splashscreen": "5.0.4",
-    "cordova-plugin-whitelist": "1.3.4",
+    "cordova-plugin-splashscreen": "6.0.1",
     "es6-promise-plugin": "4.2.2",
     "phonegap-plugin-media-stream": "1.2.1",
     "phonegap-plugin-image-capture": "1.1.2"

@@ -7,27 +7,27 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
     "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
+      "PACKAGE_NAME": "com.cordova.cameragallery.app"
     },
     "es6-promise-plugin": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
-    "cordova-plugin-compat": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
+      "PACKAGE_NAME": "com.cordova.cameragallery.app"
     },
     "phonegap-plugin-media-stream": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
+      "PACKAGE_NAME": "com.cordova.cameragallery.app"
     },
     "phonegap-plugin-image-capture": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
+      "PACKAGE_NAME": "com.cordova.cameragallery.app"
     }
   },
   "dependent_plugins": {},
   "modules": [
+    {
+      "file": "plugins/cordova-plugin-splashscreen/src/browser/SplashScreenProxy.js",
+      "id": "cordova-plugin-splashscreen.SplashScreenProxy",
+      "pluginId": "cordova-plugin-splashscreen",
+      "runs": true
+    },
     {
       "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
       "id": "cordova-plugin-splashscreen.SplashScreen",
@@ -35,12 +35,6 @@
       "clobbers": [
         "navigator.splashscreen"
       ]
-    },
-    {
-      "file": "plugins/cordova-plugin-splashscreen/src/browser/SplashScreenProxy.js",
-      "id": "cordova-plugin-splashscreen.SplashScreenProxy",
-      "pluginId": "cordova-plugin-splashscreen",
-      "runs": true
     },
     {
       "file": "plugins/es6-promise-plugin/www/promise.js",
@@ -58,10 +52,8 @@
     }
   ],
   "plugin_metadata": {
-    "cordova-plugin-whitelist": "1.3.4",
-    "cordova-plugin-splashscreen": "5.0.4",
+    "cordova-plugin-splashscreen": "6.0.1",
     "es6-promise-plugin": "4.2.2",
-    "cordova-plugin-compat": "1.2.0",
     "phonegap-plugin-media-stream": "1.2.1",
     "phonegap-plugin-image-capture": "1.1.2"
   }

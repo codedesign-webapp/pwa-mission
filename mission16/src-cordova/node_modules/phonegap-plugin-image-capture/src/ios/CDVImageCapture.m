@@ -44,7 +44,7 @@
 - (void)takePicture:(CDVInvokedUrlCommand*)command
 {
 
-    self.redEyeReduction  = command.arguments[0];
+    self.redEyeReduction  = [command.arguments[0] boolValue];
     NSNumber* imageHeight = [command argumentAtIndex:1 withDefault:nil];
     NSNumber* imageWidth = [command argumentAtIndex:2 withDefault:nil];
     _targetSize = CGSizeMake(0, 0);
@@ -69,6 +69,7 @@
         cameraViewController.flashModeValue = AVCaptureFlashModeAuto;
     }
     cameraViewController.mediaStreamInterface = self;
+    cameraViewController.task = @"imageCapture";
     [weakSelf.viewController presentViewController:cameraViewController animated:YES completion:^{
         weakSelf.hasPendingOperation = NO;
     }];

@@ -2,7 +2,9 @@
 <plugin xmlns="http://cordova.apache.org/ns/plugins/1.0" id="phonegap-plugin-media-stream" version="1.2.1">
   <name>MediaStream</name>
   <dependency id="es6-promise-plugin"/>
-  <dependency id="cordova-plugin-compat" version="^1.1.0"/>
+  <engines>
+      <engine name="cordova-android" version=">=6.3.0" />
+  </engines>
   <platform name="android">
     <js-module src="www/android/MediaDevices.js" name="MediaDevices">
       <clobbers target="navigator.mediaDevices"/>
@@ -27,6 +29,9 @@
     <js-module src="www/MediaStream.js" name="MediaStream">
       <clobbers target="MediaStream"/>
     </js-module>
+    <js-module src="www/MediaStreamTrack.js" name="MediaStreamTrack">
+      <clobbers target="MediaStreamTrack"/>
+    </js-module>
     <config-file target="config.xml" parent="/*">
       <feature name="Stream">
         <param name="ios-package" value="CDVMediaStream"/>
@@ -41,5 +46,17 @@
     <source-file src="src/ios/JPSCameraButton.m"/>
     <source-file src="src/ios/UIImage+DrawBlock.m"/>
     <resource-file src="src/ios/CameraViewController.xib"/>
+    <resource-file src="src/ios/icons/flash-auto.png"/>
+    <resource-file src="src/ios/icons/flash-auto@2x.png"/>
+    <resource-file src="src/ios/icons/flash-auto@3x.png"/>
+    <resource-file src="src/ios/icons/flash-on.png"/>
+    <resource-file src="src/ios/icons/flash-on@2x.png"/>
+    <resource-file src="src/ios/icons/flash-on@3x.png"/>
+    <resource-file src="src/ios/icons/flash-off.png"/>
+    <resource-file src="src/ios/icons/flash-off@2x.png"/>
+    <resource-file src="src/ios/icons/flash-off@3x.png"/>
+    <resource-file src="src/ios/icons/switch-camera.png"/>
+    <resource-file src="src/ios/icons/switch-camera@2x.png"/>
+    <resource-file src="src/ios/icons/switch-camera@3x.png"/>
   </platform>
 </plugin>

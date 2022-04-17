@@ -24,7 +24,7 @@
 
 @implementation CDVMediaStream
 
-    @synthesize video;
+@synthesize video;
 
 - (void)enumerateDevices:(CDVInvokedUrlCommand*)command
 {
@@ -33,10 +33,14 @@
     NSArray *devices = [AVCaptureDevice devices];
     for (AVCaptureDevice *device in devices) {
         NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:5];
-        NSLog(@"%@", device.deviceType);
-        NSLog(@"%@", device.description);
-        [dict setObject:device.deviceType forKey:@"kind"];
-        [dict setObject:device.description forKey:@"label"];
+        NSString *kind = @"audio";
+        if ([[AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo] containsObject:device]) {
+            kind = @"video";
+        }
+        NSLog(@"%@", kind);
+        NSLog(@"%@", device.localizedName);
+        [dict setObject:kind forKey:@"kind"];
+        [dict setObject:device.localizedName forKey:@"label"];
         [dict setObject:@"undefined" forKey:@"deviceID"];
         [dict setObject:@"undefined" forKey:@"groupID"];
         [array addObject:dict];
@@ -120,7 +124,7 @@
 
 
     BOOL audio = [[dict valueForKey:@"audio"] boolValue];
-    
+
     if(![dict objectForKey:@"video"]) {
         video = NO;
     }
@@ -151,22 +155,22 @@
     if(video == YES){
         for (AVCaptureDevice *device in devices) {
             NSMutableDictionary *videoTracks = [NSMutableDictionary dictionaryWithCapacity:5];
-            NSString *uuid = [[NSUUID UUID] UUIDString];
 
             //intend to pass the camera requested in constraints by the user
+            [videoTracks setObject:device.uniqueID forKey:@"id"];
+            [videoTracks setObject:@"video" forKey:@"kind"];
+            [videoTracks setObject: [NSNumber numberWithBool:YES] forKey:@"enabled"];
+            [videoTracks setObject:[NSNumber numberWithBool:NO] forKey:@"muted"];
+            [videoTracks setObject:@"live" forKey:@"readyState"];
 
             if(device.position == AVCaptureDevicePositionFront){
-                [videoTracks setObject:uuid forKey:@"id"];
-                [videoTracks setObject:@"video" forKey:@"kind"];
-                [videoTracks setObject:@"frontcamera" forKey:@"description"];
+                [videoTracks setObject:@"frontcamera" forKey:@"label"];
                 if([facingMode isEqualToString: @"user"] || [facingMode isEqualToString: @""]){
                     [arrayVideo addObject:videoTracks];
                 }
             }
             else{
-                [videoTracks setObject:uuid forKey:@"id"];
-                [videoTracks setObject:@"video" forKey:@"kind"];
-                [videoTracks setObject:@"rearcamera" forKey:@"description"];
+                [videoTracks setObject:@"rearcamera" forKey:@"label"];
                 if([facingMode isEqualToString: @"environment"] || [facingMode isEqualToString: @""]){
                     [arrayVideo addObject:videoTracks];
                 }
@@ -179,10 +183,12 @@
 
         for (AVCaptureDevice *device in audioDevices) {
             NSMutableDictionary *audioTracks = [NSMutableDictionary dictionaryWithCapacity:5];
-            NSString *uuid = [[NSUUID UUID] UUIDString];
-            [audioTracks setObject:uuid forKey:@"id"];
+            [audioTracks setObject:device.uniqueID forKey:@"id"];
             [audioTracks setObject:@"audio" forKey:@"kind"];
-            [audioTracks setObject:device.deviceType forKey:@"description"];
+            [audioTracks setObject:device.localizedName forKey:@"label"];
+            [audioTracks setObject: [NSNumber numberWithBool:YES] forKey:@"enabled"];
+            [audioTracks setObject:[NSNumber numberWithBool:NO] forKey:@"muted"];
+            [audioTracks setObject:@"live" forKey:@"readyState"];
             [arrayAudio addObject:audioTracks];
         }
         [userMedia setObject:arrayAudio forKey:@"audioTracks"];
@@ -192,6 +198,35 @@
     [userMedia setObject:uuid forKey:@"id"];
 
     CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:userMedia];
+    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+
+
+}
+
+
+- (void)getSettings:(CDVInvokedUrlCommand*)command
+{
+    NSString* id = [command argumentAtIndex:0];
+    AVCaptureDevice *device = [AVCaptureDevice deviceWithUniqueID:id];
+
+    NSMutableDictionary* settings = [NSMutableDictionary dictionaryWithCapacity:15];
+    [settings setObject:@"undefined" forKey:@"width"];
+    [settings setObject:@"undefined" forKey:@"height"];
+    [settings setObject:@"undefined" forKey:@"aspectRatio"];
+    [settings setObject:@"undefined" forKey:@"frameRate"];
+    [settings setObject:@"undefined" forKey:@"facingMode"];
+    [settings setObject:@"undefined" forKey:@"volume"];
+    [settings setObject:@"undefined" forKey:@"sampleRate"];
+    [settings setObject:@"undefined" forKey:@"sampleSize"];
+    [settings setObject:@"undefined" forKey:@"echoCancellation"];
+    [settings setObject:@"undefined" forKey:@"autoGainControl"];
+    [settings setObject:@"undefined" forKey:@"noiseSuppression"];
+    [settings setObject:@"undefined" forKey:@"latency"];
+    [settings setObject:@"undefined" forKey:@"channelCount"];
+    [settings setObject:device.uniqueID forKey:@"deviceId"];
+    [settings setObject:@"undefined" forKey:@"groupId"];
+
+    CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:settings];
     [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 
 
